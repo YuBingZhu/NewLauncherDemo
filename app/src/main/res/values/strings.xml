@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NewLauncherDemo</string>
+    <string name="btn_add_window">Add Window</string>
 </resources>
