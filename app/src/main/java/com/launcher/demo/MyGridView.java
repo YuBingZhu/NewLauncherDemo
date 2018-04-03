@@ -559,8 +559,6 @@ public class MyGridView extends GridView implements View.OnClickListener {
      * @param y
      */
     private void onDragItem(int moveX, int moveY) {
-
-
         mDragListener.setHideItem(mDragPosition);
         //setHideStartItemView();
         mWindowLayoutParams.x = moveX - mPoint2ItemLeft + mOffset2Left;
@@ -641,7 +639,7 @@ public class MyGridView extends GridView implements View.OnClickListener {
         if (isForward) {
             for (int pos = oldPosition; pos < newPosition; pos++) {
                 View view = getChildAt(pos - getFirstVisiblePosition());
-                System.out.println(pos);
+                Log.d(TAG, "position= " + pos);
 
                 if ((pos + 1) % mNumColumns == 0) {
                     resultList.add(createTranslationAnimations(view,
@@ -778,7 +776,6 @@ public class MyGridView extends GridView implements View.OnClickListener {
         this.mNeedShake = mNeedShake;
     }
 
-
     /**
      * ShakeAnimation isRunning
      *
@@ -888,11 +885,11 @@ public class MyGridView extends GridView implements View.OnClickListener {
     /**
      * HideDeleteButton
      */
-    private void setHideDeleltButton() {
+    private void setHideDeleteButton() {
         for (int i = 0; i < getChildCount(); i++) {
             final View mGridItemView = getChildAt(i);
 
-            mDeleteButton = (ImageButton) mGridItemView.findViewById(R.id.grid_item_delte);
+            mDeleteButton = mGridItemView.findViewById(R.id.grid_item_delte);
 
             mDeleteButton.setVisibility(View.GONE);
         }
@@ -929,7 +926,7 @@ public class MyGridView extends GridView implements View.OnClickListener {
         if (mEMrg.isExit() || mDeleteButton == null) {
             System.exit(0);
         } else {
-            setHideDeleltButton();
+            setHideDeleteButton();
 
             if (mStartShake && mNeedShake) {
 
