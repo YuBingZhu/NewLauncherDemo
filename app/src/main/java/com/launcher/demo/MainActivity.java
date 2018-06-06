@@ -2,7 +2,6 @@ package com.launcher.demo;
 
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String TAG = Constants.LOG_TAG + MainActivity.class.getSimpleName() + ":";
 //    private final int REQ_PERMISSION_CODE = 1;
 
-    private static final int VISIBLE_NUM = 100;
+    private static final int VISIBLE_NUM = 50;
 
     private List<HashMap<String, Object>> dataSourceList = new ArrayList<HashMap<String, Object>>();
 

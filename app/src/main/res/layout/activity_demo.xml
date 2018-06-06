@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.launcher.demo.PageRecyclerView
+        android:id="@+id/custom_swipe_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.launcher.demo.PageIndicatorView
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="20dp" />
+
+</LinearLayout>
