@@ -1,12 +1,14 @@
 package com.launcher.demo;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -96,6 +98,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //                addViewToWindow();
 //            }
 //        });
+
+    }
+
+    public void testBackground(View view) {
+        Intent backgroundIntent = new Intent(this, TestBackgroundActivity.class);
+        startActivity(backgroundIntent);
     }
 
     private void showToast(String text) {

@@ -29,6 +29,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="testBackground"
+        android:paddingBottom="10dp"
+        android:text="TestBackGround" />
+
     <com.launcher.demo.MyGridView
         android:id="@+id/dragGridView"
         android:layout_width="match_parent"
