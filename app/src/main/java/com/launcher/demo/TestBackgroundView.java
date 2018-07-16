@@ -41,10 +41,6 @@ public class TestBackgroundView extends View {
     private void initBackgroundGradient() {
         mBackgroundPaint = new Paint();
         int[] colors = new int[]{
-                getResources().getColor(R.color.background_color_1),
-                getResources().getColor(R.color.background_color_2),
-                getResources().getColor(R.color.background_color_3),
-                getResources().getColor(R.color.background_color_4)
         };
 
         verticalBackground = new LinearGradient(
