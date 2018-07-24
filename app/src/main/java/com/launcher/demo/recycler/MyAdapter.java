@@ -17,14 +17,14 @@ public class MyAdapter extends ExpandableRecyclerViewAdapter<GenreViewHolder, Ar
     @Override
     public GenreViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_genre, parent, false);
+                .inflate(R.layout.ff_recycler_group, parent, false);
         return new GenreViewHolder(view);
     }
 
     @Override
     public ArtistViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_artist, parent, false);
+                .inflate(R.layout.ff_recycler_child, parent, false);
         return new ArtistViewHolder(view);
     }
 

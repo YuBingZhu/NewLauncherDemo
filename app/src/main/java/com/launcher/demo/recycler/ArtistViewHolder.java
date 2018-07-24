@@ -1,6 +1,7 @@
 package com.launcher.demo.recycler;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.launcher.demo.R;
@@ -8,14 +9,19 @@ import com.launcher.demo.R;
 
 public class ArtistViewHolder extends ChildViewHolder {
 
-    private TextView childTextView;
+    private TextView title;
+    private ImageView icon;
+    private TextView content;
 
     public ArtistViewHolder(View itemView) {
         super(itemView);
-        childTextView = (TextView) itemView.findViewById(R.id.list_item_artist_name);
+        title = (TextView) itemView.findViewById(R.id.title);
+        content = (TextView) itemView.findViewById(R.id.content);
+        icon = (ImageView) itemView.findViewById(R.id.icon);
     }
 
     public void setArtistName(String name) {
-        childTextView.setText(name);
+        title.setText(name);
+        content.setText(" content: " + name);
     }
 }

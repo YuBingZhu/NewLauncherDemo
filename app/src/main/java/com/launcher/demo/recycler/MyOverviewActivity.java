@@ -7,6 +7,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 
 import com.launcher.demo.R;
 
@@ -22,6 +23,7 @@ public class MyOverviewActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, " onCreate.");
         setContentView(R.layout.my_overview);
+//        setContentView(R.layout.ff_recycler_child);
 
         RecyclerView mRecyclerView = findViewById(R.id.my_recycler);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -34,6 +36,25 @@ public class MyOverviewActivity extends Activity {
         adapter = new MyAdapter(makeGenres());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setAdapter(adapter);
+
+        mRecyclerView.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+
+        });
+
     }
 
     @Override

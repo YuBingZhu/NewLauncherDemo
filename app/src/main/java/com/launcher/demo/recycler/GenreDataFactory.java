@@ -31,7 +31,8 @@ public class GenreDataFactory {
     }
 
     public static Genre makeJazzGenre() {
-        return new Genre("Jazz", makeJazzArtists(), R.drawable.ic_saxaphone);
+//        return new Genre("Jazz", makeJazzArtists(), R.drawable.ic_saxaphone);
+        return null;
     }
 
     public static List<Artist> makeJazzArtists() {
