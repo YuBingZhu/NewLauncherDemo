@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,33 +43,57 @@ public class AddViewActivity extends Activity {
 
     }
 
-    public void add_view(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showToast("click add view button.");
+    private boolean hasAddView = false;
 
-                TextView textView = new TextView(AddViewActivity.this);
-                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
-                params.setMargins(100, 10, 10, 10);
-                textView.setLayoutParams(params);
-                textView.setTextSize(30);
-                textView.setTextColor(getResources().getColor(R.color.colorPrimary));
-                textView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                textView.setText(" new added view !!!");
-                container.addView(textView, 3);
-            }
-        });
+    public void addView(View view) {
+        showToast("click add view button.");
+        if (hasAddView) {
+            container.removeViews(3, 5);
+            hasAddView = false;
+            return;
+        }
+        TextView textView;
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        params.setMargins(100, 10, 10, 10);
+        for (int i = 0; i < 5; i++) {
+            textView = new TextView(this);
+            textView.setLayoutParams(params);
+            textView.setTextSize(30);
+            textView.setTextColor(getResources().getColor(R.color.colorPrimary));
+            textView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            textView.setText(" new added view " + i);
+            textView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View view, MotionEvent motionEvent) {
+                    switch (motionEvent.getAction()) {
+                        case MotionEvent.ACTION_MOVE:
+                            showToast(" touch to move item");
+                            container.removeView(view);
+                            break;
+                    }
+                    return true;
+                }
+            });
+            container.addView(textView, 3);
+        }
+        hasAddView = true;
+
     }
 
     private void showToast(String text) {
         if (toast != null) {
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.setText(text);
+        } else {
+            toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
         }
-        toast = Toast.makeText(this, text, Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void removeView(View view) {
+        showToast("click remove view button.");
+        container.removeViewAt(3);
     }
 }

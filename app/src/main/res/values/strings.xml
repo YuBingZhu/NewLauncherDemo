@@ -2,4 +2,5 @@
     <string name="app_name">NewLauncherDemo</string>
     <string name="btn_add_window">Add Window</string>
     <string name="btn_add_view">Add View</string>
+    <string name="btn_remove_view">Remove View</string>
 </resources>
