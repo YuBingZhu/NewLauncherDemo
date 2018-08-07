@@ -97,6 +97,8 @@ public class AddViewActivity extends Activity {
                 container.addView(textView, 3);
             }
         });
+    }
+
     private boolean hasAddView = false;
 
     public void addView(View view) {
@@ -160,6 +162,7 @@ public class AddViewActivity extends Activity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
 
     public void removeView(View view) {
         showToast("click remove view button.");

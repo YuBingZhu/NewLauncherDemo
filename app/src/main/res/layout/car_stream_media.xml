@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="176dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/card_media_icon"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/icon" />
+
+    <LinearLayout
+        android:layout_width="560dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@id/card_media_icon"
+        android:orientation="vertical">
+
+        <!--style="@style/Heading05"-->
+        <TextView
+            android:id="@+id/card_media_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="8sp"
+            android:singleLine="true"
+            android:text="First Name Last Name"
+            android:textColor="#ffffff"
+            android:textSize="31sp" />
+
+        <!--android:textColor="@color/neutral_5-->
+        <TextView
+            android:id="@+id/card_media_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="0:10"
+            android:textColor="#414c59"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/card_media_control"
+        android:layout_width="416dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/previous"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="72dp" />
+
+        <ImageButton
+            android:id="@+id/play_pause"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="56dp" />
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="56dp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/card_media_progress"
+        android:layout_width="1024dp"
+        android:layout_height="8dp"
+        android:layout_alignParentBottom="true"
+        android:progressDrawable="@drawable/car_stream_media_progress" />
+</RelativeLayout>
