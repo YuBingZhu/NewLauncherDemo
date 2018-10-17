@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -39,6 +41,16 @@
         <activity
             android:name=".addview.AddViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|layoutDirection">
+
+        </activity>
+
+        <activity android:name=".notification.NotificationDemoActivity">
+
+        </activity>
+
+        <activity
+            android:name="com.media.demo.ui.MediaMainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,10 +58,28 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".notification.NotificationDemoActivity">
+        <service
+            android:name="com.media.demo.service.MusicService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
 
-        </activity>
+        <!--
+             MediaSession, prior to API 21, uses a broadcast receiver to communicate with a
+             media session. It does not have to be this broadcast receiver, but it must
+             handle the action "android.intent.action.MEDIA_BUTTON".
 
+             Additionally, this is used to resume the service from an inactive state upon
+             receiving a media button event (such as "play").
+        -->
+        <receiver android:name="android.support.v4.media.session.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

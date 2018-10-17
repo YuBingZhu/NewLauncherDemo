@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_old);
 
 //        //hide navigation bar
 //        getWindow().getDecorView().setSystemUiVisibility(
@@ -77,10 +76,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         bottomContainer = findViewById(R.id.bottom_container);
 
-//        if (!Settings.canDrawOverlays(MainActivity.this)) {
+//        if (!Settings.canDrawOverlays(MediaMainActivity.this)) {
 //            showToast("can not DrawOverlays");
 //            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION
-//                    , Uri.parse("package:" + MainActivity.this.getPackageName()));
+//                    , Uri.parse("package:" + MediaMainActivity.this.getPackageName()));
 //            startActivityForResult(intent, REQ_PERMISSION_CODE);
 //        }
 //
