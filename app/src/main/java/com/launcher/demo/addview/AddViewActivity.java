@@ -70,6 +70,8 @@ public class AddViewActivity extends Activity {
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
         mBuilder.setContentIntent(pIntent);
+        mBuilder.addAction(new NotificationCompat.Action(R.mipmap.icon, "play message", pIntent));
+        mBuilder.addAction(new NotificationCompat.Action(R.mipmap.icon, "dismiss", pIntent));
         NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(1, mBuilder.build());
 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.launcher.demo.notification.NotificationLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/send_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="普通HeadUp通知" />
+
+        <Button
+            android:id="@+id/send_more_line_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="多行文本通知" />
+
+        <Button
+            android:id="@+id/send_big_pic_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大图通知" />
+
+        <Button
+            android:id="@+id/send_list_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="列表型通知" />
+
+        <Button
+            android:id="@+id/send_action_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="带按钮通知" />
+
+        <Button
+            android:id="@+id/send_progress_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="带进度条通知"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/send_media_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="媒体通知" />
+
+        <Button
+            android:id="@+id/send_customer_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="自定义通知headUp1" />
+
+        <Button
+            android:id="@+id/send_headup_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="HeadUp2通知" />
+
+        <Button
+            android:id="@+id/send_headup_notification3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="HeadUp3通知"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/send_customer_chronoNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ChronoNotification"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/cancle_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="清除通知" />
+
+        <Button
+            android:id="@+id/cancle_normal_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除普通通知"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.launcher.demo.notification.NotificationClipButton
+                android:id="@+id/test_clip_bounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#0ff"
+                android:text="test_clip_bounds" />
+
+            <ImageView
+                android:id="@+id/ovaliv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="#ff0000"
+                android:scaleType="center" />
+        </LinearLayout>
+    </com.launcher.demo.notification.NotificationLinearLayout>
+</ScrollView>

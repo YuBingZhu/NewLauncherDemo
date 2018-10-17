@@ -19,6 +19,7 @@
         <activity android:name=".TestBackgroundActivity">
 
         </activity>
+
         <activity android:name=".DemoActivity">
 
         </activity>
@@ -30,15 +31,23 @@
         <activity android:name=".recycler.MyOverviewActivity">
 
         </activity>
+
         <activity android:name=".insert.ExpandRecyclerViewActivity">
 
         </activity>
-        <activity android:name=".addview.AddViewActivity">
+
+        <activity
+            android:name=".addview.AddViewActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|layoutDirection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".notification.NotificationDemoActivity">
+
         </activity>
 
     </application>
